@@ -33,6 +33,7 @@
   </div>
 
 
+  <h2 style="text-align:center; color:#2b7cff;">MATEMÁTICA</h2>
   <div class="question">
     <label>1) Quantos quadradinhos para comer 4/6 da barra?</label>
     <input type="radio" name="q1" value="12" required> 12<br>
@@ -74,6 +75,7 @@
     <input type="radio" name="q5" value="8867"> 8.867<br>
   </div>
 
+  <h2 style="text-align:center; color:#2b7cff;">GEOGRAFIA</h2>
   <div class="question">
     <label>6) Crescimento das cidades no século XX ocorreu principalmente devido a:</label>
     <input type="radio" name="q6" value="A construção de castelos medievais" required> A construção de castelos medievais<br>
@@ -114,6 +116,7 @@
     <input type="radio" name="q10" value="O mapa tem 100000 imagens de satélite"> O mapa tem 100000 imagens de satélite<br>
   </div>
 
+  <h2 style="text-align:center; color:#2b7cff;">INGLÊS</h2><p style="background:#eef; padding:10px; border-radius:6px;">Leia o texto a seguir: "Mariana mora com sua família em uma casa no campo. Ela adora passar o tempo com seus pais, irmãos e primos, especialmente durante as férias de verão, quando todos se reúnem para brincar no jardim e fazer piqueniques. No domingo passado, eles visitaram a cidade para ver os avós e passear no parque." Qual é o vocabulário correto em inglês para se referir aos membros da família mencionados no texto?</p>
   <div class="question">
     <label>11) Vocabulário correto em inglês para membros da família:</label>
     <input type="radio" name="q11" value="'family', 'parents', 'brothers', 'cousins' e 'grandparents'" required> 'family', 'parents', 'brothers', 'cousins' e 'grandparents'<br>
@@ -167,8 +170,7 @@ document.getElementById('quizForm').addEventListener('submit', function(e){
     .then(resp => resp.json())
     .then(obj => {
       if(obj.status === 'ok'){
-        alert('Respostas enviadas! Sua nota: ' + obj.score + ' / 15');
-        f.querySelector('button[type=submit]').disabled = true;
+        document.body.innerHTML = '<h1 style="text-align:center; color:green;">Sua nota: ' + obj.score + ' / 15</h1>';
       } else {
         alert('Erro ao enviar: ' + (obj.message || 'tente novamente'));
       }
